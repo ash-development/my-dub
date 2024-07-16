@@ -12,12 +12,7 @@ export const GET = withWorkspace(
         projectId: workspace.id,
       },
       select: {
-        dubsh: true,
-        chatgpt: true,
-        sptifi: true,
-        gitnew: true,
-        amznid: true,
-        loooooooong: true,
+        ashiesbs: true,
       },
     });
 
