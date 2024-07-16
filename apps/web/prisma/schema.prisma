@@ -3,7 +3,7 @@
 
 datasource db {
   provider     = "mysql"
-  url          = "mysql://root:@localhost:3306/planetscale"
+  url          = "mysql://root:@5.161.195.30:3306/planetscale"
   relationMode = "prisma"
 }
 
