@@ -6,6 +6,7 @@ services:
     restart: always
     environment:
       MYSQL_DATABASE: planetscale
+      MYSQL_ROOT_PASSWORD: "rjr1105"
       MYSQL_ROOT_HOST: "%"
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
     command:
