@@ -19,53 +19,7 @@ const completionSchema = z.object({
 // POST /api/ai/completion – Generate AI completion
 export const POST = withWorkspaceEdge(
   async ({ req, workspace }) => {
-    if (!anthropic) {
-      console.error("Anthropic is not configured. Skipping the request.");
-      throw new DubApiError({
-        code: "bad_request",
-        message: "Anthropic API key is not configured.",
-      });
-    }
-
-    try {
-      const {
-        // comment for better diff
-        prompt,
-        model,
-      } = completionSchema.parse(await req.json());
-
-      const response = await anthropic.messages.create({
-        messages: [
-          {
-            role: "user",
-            content: prompt,
-          },
-        ],
-        model,
-        stream: true,
-        max_tokens: 300,
-      });
-
-      const stream = AnthropicStream(response);
-
-      // only count usage for the sonnet model
-      if (model === "claude-3-sonnet-20240229") {
-        waitUntil(
-          prismaEdge.project.update({
-            where: { id: workspace.id.replace("ws_", "") },
-            data: {
-              aiUsage: {
-                increment: 1,
-              },
-            },
-          }),
-        );
-      }
-
-      return new StreamingTextResponse(stream);
-    } catch (error) {
-      return handleAndReturnErrorResponse(error);
-    }
+    return
   },
   { needNotExceededAI: true },
 );
