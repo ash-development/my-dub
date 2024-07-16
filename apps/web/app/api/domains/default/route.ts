@@ -49,12 +49,7 @@ export const PUT = withWorkspace(
         projectId: workspace.id,
       },
       data: {
-        dubsh: defaultDomains.includes("dub.sh"),
-        chatgpt: defaultDomains.includes("chatg.pt"),
-        sptifi: defaultDomains.includes("spti.fi"),
-        gitnew: defaultDomains.includes("git.new"),
-        amznid: defaultDomains.includes("amzn.id"),
-        loooooooong: defaultDomains.includes("loooooooo.ng"),
+        ashiesbs: defaultDomains.includes("ashie.sbs"),
       },
     });
 
