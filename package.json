@@ -24,5 +24,8 @@
     "tsconfig": "workspace:*",
     "turbo": "^1.12.5"
   },
-  "packageManager": "pnpm@8.6.10"
+  "packageManager": "pnpm@8.6.10",
+  "dependencies": {
+    "next": "14.3.0-canary.87"
+  }
 }
