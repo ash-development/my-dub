@@ -25,6 +25,7 @@ services:
         "-listen-port=3900",
         "-mysql-dbname=planetscale",
         "-mysql-addr=ps-mysql",
+        "-mysql-port 3307",
       ]
     depends_on:
       - ps-mysql
